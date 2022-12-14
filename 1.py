@@ -22,5 +22,38 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 logisticregressionclassifier = LogisticRegression()
 logisticregressionclassifier.fit(X_train, y_train)
 
+'''
+#svm
+svcmodel = SVC(kernel='linear', C=1E10)
+svcmodel.fit(X_train, y_train)
+y_pred = svcmodel.predict(X_train)
+'''
+
+'''
+#decisiontree
+decisiontreemodel = DecisionTreeClassifier(criterion = 'entropy')
+decisiontreemodel.fit(X_train,y_train)
+y_pred = decisiontreemodel.predict(X_test)
+'''
+
+'''
+#knn
+knnmodel = KNeighborsClassifier()
+knnmodel.fit(X_train, y_train) 
+'''
+
+'''
+#randomforestmodel
+randomforestmodel = RandomForestClassifier(n_estimators=10,criterion="entropy")
+randomforestmodel.fit(X_train, y_train)
+'''
+
+'''
+#bayesianmodel
+
+bayesianmodel = GaussianNB()
+model.fit(X, y)
+'''
+
 y_pred = logisticregressionclassifier.predict(X_test)
 print(accuracy_score(y_test, y_pred))
